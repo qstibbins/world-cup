@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: games; Type: TABLE; Schema: public; Owner: postgres
+-- Name: games; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.games (
@@ -35,10 +35,8 @@ CREATE TABLE public.games (
 );
 
 
-ALTER TABLE public.games OWNER TO postgres;
-
 --
--- Name: games_game_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: games_game_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.games_game_id_seq
@@ -50,17 +48,15 @@ CREATE SEQUENCE public.games_game_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.games_game_id_seq OWNER TO postgres;
-
 --
--- Name: games_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: games_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.games_game_id_seq OWNED BY public.games.game_id;
 
 
 --
--- Name: teams; Type: TABLE; Schema: public; Owner: postgres
+-- Name: teams; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.teams (
@@ -69,10 +65,8 @@ CREATE TABLE public.teams (
 );
 
 
-ALTER TABLE public.teams OWNER TO postgres;
-
 --
--- Name: teams_team_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: teams_team_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.teams_team_id_seq
@@ -84,31 +78,29 @@ CREATE SEQUENCE public.teams_team_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.teams_team_id_seq OWNER TO postgres;
-
 --
--- Name: teams_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: teams_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.teams_team_id_seq OWNED BY public.teams.team_id;
 
 
 --
--- Name: games game_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: games game_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.games ALTER COLUMN game_id SET DEFAULT nextval('public.games_game_id_seq'::regclass);
 
 
 --
--- Name: teams team_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: teams team_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.teams ALTER COLUMN team_id SET DEFAULT nextval('public.teams_team_id_seq'::regclass);
 
 
 --
--- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.games (game_id, year, round, winner_id, opponent_id, winner_goals, opponent_goals) FROM stdin;
@@ -148,7 +140,7 @@ COPY public.games (game_id, year, round, winner_id, opponent_id, winner_goals, o
 
 
 --
--- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.teams (team_id, name) FROM stdin;
@@ -180,21 +172,21 @@ COPY public.teams (team_id, name) FROM stdin;
 
 
 --
--- Name: games_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: games_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.games_game_id_seq', 67, true);
 
 
 --
--- Name: teams_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: teams_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.teams_team_id_seq', 54, true);
 
 
 --
--- Name: games games_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: games games_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.games
@@ -202,7 +194,7 @@ ALTER TABLE ONLY public.games
 
 
 --
--- Name: teams teams_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: teams teams_name_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.teams
@@ -210,7 +202,7 @@ ALTER TABLE ONLY public.teams
 
 
 --
--- Name: teams teams_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: teams teams_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.teams
@@ -218,7 +210,7 @@ ALTER TABLE ONLY public.teams
 
 
 --
--- Name: games games_opponent_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: games games_opponent_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.games
@@ -226,7 +218,7 @@ ALTER TABLE ONLY public.games
 
 
 --
--- Name: games games_winner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: games games_winner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.games
